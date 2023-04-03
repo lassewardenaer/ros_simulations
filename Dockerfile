@@ -23,9 +23,9 @@ RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 
 RUN mkdir -p turtlebot3_simulation_ws/src
 
-RUN git clone https://github.com/ROBOTIS-GIT/turtlebot3.git /home/ros/catkin_ws/src/turtlebot3
-RUN git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git /home/ros/catkin_ws/src/turtlebot3_msgs
-RUN git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git /home/ros/catkin_ws/src/turtlebot3_simulations
+COPY submodules/turtlebot3 /home/ros/catkin_ws/src/turtlebot3
+COPY submodules/turtlebot3_msgs /home/ros/catkin_ws/src/turtlebot3_msgs
+COPY submodules/turtlebot3_simulations /home/ros/catkin_ws/src/turtlebot3_simulations
 
 WORKDIR /home/ros/catkin_ws/turtlebot3_simulation_ws
 
